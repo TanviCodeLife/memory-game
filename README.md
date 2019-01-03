@@ -1,8 +1,8 @@
 # Project Title
 
-#### Epicodus JavaScript exercise, Date
+#### Epicodus Memory Game using JS, 01/03/2019
 
-#### By Your Name Here
+#### Tanvi Garg
 
 ## Description
 
@@ -12,7 +12,11 @@ Add description here
 
 | Behavior | Input | Output |
 |----------|-------|--------|
-| Behavior | input | output |
+| Generate Cards | Start Game | Grid of cards should appear |
+| On click event on a card, display card contents | flip any card | card should flip and reveal picture |
+| On click event on a second card | flip another card | second card should flip and reveal picture |
+| If first card flip and second flip reveal same picture keep them open| Check if first card flip and seconf card flip have same pictures | If the first and the seconf card flip match, keep cards open|
+| If first card flip and second flip reveal different picture close the cards| Check if first card flip and seconf card flip have same pictures | If the first and the second card flip do not match, close the cards|
 
 ## Setup on OSX
 
