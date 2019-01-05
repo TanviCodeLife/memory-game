@@ -1,27 +1,35 @@
-export class MemoryGame {
-  constructor() {
-    this.No_Of_Squares = 10;
-    this.randomCards = [];
-    this.clicks = 0;
-    this.firstCard = "";
-    this.secondCard = "";
-    this.buildCards();
-    this.buildCardGrid();
-  }
+export function MemoryGame() {
+  this.noOfCards = 2;
+  // this.firstFlip = false;
+  // this.secondFlip = false;
+  // this.isMatch = true;
+  // this.noOfTurns = 0;
+  // this.cards = [];
+}
 
-  //build random cards in a grid and push them into a random Cards array
-  buildCardGrid() {
-    for(let i = 0; i <= this.No_Of_Squares; i++){
-      let randomNumber = Math.floor(Math.random() * this.No_Of_Squares);
-      let card = new Card(randomNumber);
-      this.randomCards.push(card);
-      $("#board").append("<div class='grid'></div>");
-    }
-  }
-}
-    
-export class Card{
-  constructor(CardId) {
-    this.id = CardId;
-  }
-}
+// function shuffle() {
+//   $(".memory-game").each(function () {
+//     let divs = $(this).find('div');
+
+//     for (let i = 0; i < divs.length; i++){  
+//       $(divs[i]).remove();
+//     }
+//     let i = divs.length;
+//     if (i == 0) 
+//       return false;
+//     while (--i) {
+//       let j = Math.floor(Math.random() * (i + 1));
+//       let tempi = divs[i];
+//       let tempj = divs[j];
+//       divs[i] = tempj;
+//       divs[j] = tempi;
+//     }
+//     for (let i = 0; i < divs.length; i++) {
+//       $(divs[i]).appendTo(this);
+//     }
+//   });
+// };
+
+//Check firstFlip
+//Check secondFlip
+//Check isMatch

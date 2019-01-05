@@ -12,11 +12,15 @@ Add description here
 
 | Behavior | Input | Output |
 |----------|-------|--------|
-| Generate Cards | Start Game | Grid of cards should appear |
+| Generate Single Card With 2 Sides | Back Of Card Visible and Clickable | Card should rotate To reveal backside |
+| Generate 3 cards | Back Of of each is Card Visible and Clickable | Each card should be able to  rotate to reveal backside |
+| Duplicate the cards to have 2 sets of 3 cards (total 6 cards) | 6 cards should appear |  Each card should have a duplicate in the DOM|
+| Generate Grid of Cards | Start Game | Grid of cards should appear |
 | On click event on a card, display card contents | flip any card | card should flip and reveal picture |
 | On click event on a second card | flip another card | second card should flip and reveal picture |
-| If first card flip and second flip reveal same picture keep them open| Check if first card flip and seconf card flip have same pictures | If the first and the seconf card flip match, keep cards open|
-| If first card flip and second flip reveal different picture close the cards| Check if first card flip and seconf card flip have same pictures | If the first and the second card flip do not match, close the cards|
+| Check for match on the first and the second flip, If same picture appear keep them open| second click on another card should flip it | If the first and the second card flip match, keep cards open |
+| Check for match on the first and the second flip, if different pictures appear flip them back to close| second click on another card should flip it | If the first and the second card flip do not match, close the cards|
+| Player should not be able to play further until two flips are compared for a match or a mismatch | third click | 1. If the first and the second card flip do not match, close the cards  2. If the first and the second card flip match, open the cards|
 
 ## Setup on OSX
 

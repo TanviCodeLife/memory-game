@@ -7,11 +7,19 @@
     "build": "webpack --mode development",
     "start": "npm run build; webpack-dev-server --open --mode development",
     "lint": "eslint src/*.js",
+    "watch": "webpack --watch",
     "test": "karma start karma.conf.js"
+  },
+  "repository": {
+    "type": "git"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "",
+  "bugs": {
+  "url": ""
+  },
+  "homepage": "",
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.3",
