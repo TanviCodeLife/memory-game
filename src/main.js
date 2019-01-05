@@ -15,7 +15,7 @@ function shuffle() {
     // eslint-disable-next-line no-redeclare
     var i = divs.length;
     if (i == 0)
-    return false;
+      return false;
     while (i--) {
       var j = Math.floor(Math.random() * (i + 1));
       var tempi = divs[i];
@@ -32,15 +32,17 @@ function shuffle() {
 }
 
 
-
-  
-  // function flipCard() {
-  
-  // }
-
 function attachContactListeners() {
   $(".memory-game").on("click", "div", function () {
-    console.log("The value of this <div> is " + $(this).data("value") + ".");
+    //console.log("The value of this <div> is " + $(this).data("value") + ".");
+    flipcard();
+    if(game.clicks == 0) {
+      game.firstFlipValue = $(this).data("value");
+      game.clicks++;
+    } else if(game.clicks == 1) {
+      game.secondFlipValue = $(this).data("value");
+      checkMatch();
+    }
   });
   //flipcard1 
   //flipcard2
@@ -50,6 +52,7 @@ function attachContactListeners() {
 }
 
 $(document).ready(function() {
-  attachContactListeners(); 
   shuffle();
+  attachContactListeners(); 
+
 });
