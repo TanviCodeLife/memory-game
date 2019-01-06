@@ -2,7 +2,7 @@ import { MemoryGame } from './memory-game';
 import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './styles.css';import { tmpdir } from 'os';
+import './styles.css';
 
 var game = new MemoryGame();
 
@@ -31,28 +31,50 @@ function shuffle() {
   });
 }
 
+//function flipcard() {
+  //add class to display value
+//}
+
+
+// function checkMatch() {
+//   if (game.firstFlipValue === game.secondFlipValue) {
+//     matched();
+//   }
+// }
+
+// function matched() {
+  //use $("div[name=" + game.firstFlipValue + "]") to access the element
+  //disable click events for matched cards
+//}
+
+//function unmatched() {
+  //disable clicks more clicks until unmatch cards flipped back(hidden)
+  //add class to hide value for firstFlipValue and secondFlipValue  
+//}
+
+//function reset() {
+  //reset firstFlipValue and secondFlipValue
+  //reset game.clicks
+}
+
 
 function attachContactListeners() {
   $(".memory-game").on("click", "div", function () {
     //console.log("The value of this <div> is " + $(this).data("value") + ".");
     flipcard();
-    if(game.clicks == 0) {
-      game.firstFlipValue = $(this).data("value");
-      game.clicks++;
-    } else if(game.clicks == 1) {
-      game.secondFlipValue = $(this).data("value");
-      checkMatch();
-    }
   });
-  //flipcard1 
-  //flipcard2
-  //check match
-  //match == true; keep cards open
-  //match == false; close cards 
 }
 
 $(document).ready(function() {
   shuffle();
   attachContactListeners(); 
-
+  if(game.clicks == 0) {
+    game.firstFlipValue = $(this).data("value");
+    game.clicks++;
+  } else if(game.clicks == 1) {
+    game.secondFlipValue = $(this).data("value");
+    //check match
+  }
+  //add button for reset
+  //reset game using shuffle(); and reset();
 });

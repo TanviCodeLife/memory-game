@@ -9,7 +9,3 @@ export function MemoryGame() {
 }
 
 
-
-//Check firstFlip
-//Check secondFlip
-//Check isMatch
