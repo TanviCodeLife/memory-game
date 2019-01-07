@@ -62,8 +62,11 @@ function checkMatch() {
     game.cards.push($("div[data-value=" + game.secondFlipValue + "]"));
   } else {
     game.isMatch = false;
-    unflipCard(game.firstFlipValue);
-    unflipCard(game.secondFlipValue);
+    setTimeout(function(){
+      console.log("Hello");
+      unflipCard(game.firstFlipValue);
+      unflipCard(game.secondFlipValue);
+    }, 1000);
 
   }
   game.clicks = 0;
@@ -109,7 +112,7 @@ function playGame() {
       checkMatch();
       console.log("Moves: " + game.noOfMoves);
       if (game.cards.length === 10) {
-        $(".moves").text(game.noOfMoves);
+        $(".moves").append("<li>" + game.noOfMoves + "</li>");
         reset();
       }
     }
