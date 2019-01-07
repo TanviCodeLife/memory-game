@@ -13,15 +13,15 @@ function shuffle() {
       $(divs[i]).remove();
     }
 
-    var i = divs.length;
-    if (i == 0)
+    var currentIndex = divs.length;
+    if (currentIndex == 0)
     return false;
-    while (i--) {
-      var j = Math.floor(Math.random() * (i + 1));
-      var tempi = divs[i];
-      var tempj = divs[j];
-      divs[i] = tempj;
-      divs[j] = tempi;
+    while (currentIndex--) {
+      var randomIndex = Math.floor(Math.random() * (currentIndex + 1));
+      var currentIndexVal = divs[currentIndex];
+      var randomIndexVal = divs[randomIndex];
+      divs[currentIndex] = randomIndexVal;
+      divs[randomIndex] = currentIndexVal;
     }
 
     for (let i = 0; i < divs.length; i++) {
@@ -31,6 +31,14 @@ function shuffle() {
 }
 
 function flipcard(value) {
+ // let value = (value.includes("yellow")) ? "yellow" :
+ //  (value.includes("red")) ? "red" :
+ //  (value.includes("blue")) ? "blue" :
+ //  (value.includes("orange")) ? "orange" :
+ //  (value.includes("pink")) ? "pink" ;
+ //
+ //  $("div[data-value=" + value + "]").addClass(value);
+
   if(value.includes("yellow")){
     $("div[data-value=" + value + "]").addClass("yellow");
   } else if (value.includes("red")) {
@@ -122,23 +130,4 @@ function playGame() {
 $(document).ready(function() {
   shuffle();
   playGame();
-  // $(".memory-card").click(function() {
-  //   attachContactListeners();
-  //   if(game.clicks === 0) {
-  //     game.firstFlipValue = $(this).data("value");
-  //     flipcard(game.firstFlipValue);
-  //     game.clicks++;
-  //
-  //   } else if(game.clicks === 1) {
-  //     game.secondFlipValue = $(this).data("value");
-  //     flipcard(game.secondFlipValue);
-  //     game.noOfMoves++;
-  //     checkMatch();
-  //     console.log("Moves: " + game.noOfMoves);
-  //     if (game.cards.length === 10) {
-  //       $(".moves").append(game.noOfMoves);
-  //       reset();
-  //     }
-  //     }
-  // })
 });
