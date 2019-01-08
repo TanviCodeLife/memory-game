@@ -1,4 +1,4 @@
-# Project Title
+# Memory Game
 
 #### Epicodus Memory Game using JS, 01/03/2019
 
@@ -12,13 +12,13 @@ Add description here
 
 | Behavior | Input | Output |
 |----------|-------|--------|
-| Generate Single Card With 2 Sides | Back Of Card Visible and Clickable | Card should rotate To reveal backside |
-| Generate 3 cards | Back Of of each is Card Visible and Clickable | Each card should be able to  rotate to reveal backside |
-| Duplicate the cards to have 2 sets of 3 cards (total 6 cards) | 6 cards should appear |  Each card should have a duplicate in the DOM|
+| Generate Single Card | Back Of Card Visible and Clickable | Card should Reveal color |
+| Generate 3 cards | Back Of of each is Card Visible and Clickable | Each card should reveal color |
+| Duplicate the cards to have 2 sets of 5 cards (total 10 cards) | 10 cards should appear |  Each card should have a duplicate in the DOM|
 | Generate Grid of Cards | Start Game | Grid of cards should appear |
-| On click event on a card, display card contents | flip any card | card should flip and reveal picture |
-| On click event on a second card | flip another card | second card should flip and reveal picture |
-| Check for match on the first and the second flip, If same picture appear keep them open| second click on another card should flip it | If the first and the second card flip match, keep cards open |
+| On click event on a card, display card contents | flip any card | card should flip and reveal color |
+| On click event on a second card | flip another card | second card should flip and reveal color |
+| Check for match on the first and the second flip, If same color appear keep them open| second click on another card should flip it | If the first and the second card flip match, keep cards open |
 | Check for match on the first and the second flip, if different pictures appear flip them back to close| second click on another card should flip it | If the first and the second card flip do not match, close the cards|
 | Player should not be able to play further until two flips are compared for a match or a mismatch | third click | 1. If the first and the second card flip do not match, close the cards  2. If the first and the second card flip match, open the cards|
 

@@ -43,26 +43,29 @@ function unflipCard(value) {
 
 
 function checkMatch() {
-  if (game.secondFlipValue.includes(game.firstFlipValue) || game.firstFlipValue.includes(game.secondFlipValue)) {
-    game.isMatch = true;
-    let div1 = $("div[data-value=" + game.firstFlipValue + "]");
-    let div2 = $("div[data-value=" + game.secondFlipValue + "]");
-    div1.off("click");
-    div2.off("click");
-    game.cards.push(div1);
-    game.cards.push(div2);
-  } else {
-    game.isMatch = false;
-    setTimeout(function(){
-      console.log("Hello");
-      unflipCard(game.firstFlipValue);
-      unflipCard(game.secondFlipValue);
-    }, 1000);
+  let game.isMatch = (game.secondFlipValue.includes(game.firstFlipValue) || game.firstFlipValue.includes(game.secondFlipValue));
 
+  switch(game.isMatch) {
+    case true:
+      game.isMatch = true;
+      let div1 = $("div[data-value=" + game.firstFlipValue + "]");
+      let div2 = $("div[data-value=" + game.secondFlipValue + "]");
+      div1.off("click");
+      div2.off("click");
+      game.cards.push(div1);
+      game.cards.push(div2);
+    break;
+    case false:
+      setTimeout(function(){
+        console.log("Hello");
+        unflipCard(game.firstFlipValue);
+        unflipCard(game.secondFlipValue);
+      }, 1000);
+    break;
+    default:
   }
   game.clicks = 0;
 }
-
 
 function reset() {
   for(var i = 0; i < game.cards.length; i++ ){
@@ -100,6 +103,7 @@ function playGame() {
       game.secondFlipValue = $(this).data("value");
       flipcard(game.secondFlipValue);
       game.noOfMoves++;
+      //remove contact listeners for rest of the cards or lock board
       checkMatch();
       console.log("Moves: " + game.noOfMoves);
       if (game.cards.length === 10) {
