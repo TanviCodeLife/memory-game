@@ -31,28 +31,9 @@ function shuffle() {
 }
 
 function flipcard(value) {
- // let value = (value.includes("yellow")) ? "yellow" :
- //  (value.includes("red")) ? "red" :
- //  (value.includes("blue")) ? "blue" :
- //  (value.includes("orange")) ? "orange" :
- //  (value.includes("pink")) ? "pink" ;
- //
- //  $("div[data-value=" + value + "]").addClass(value);
+ let outputValue = (value.includes("yellow")) ? "yellow" : (value.includes("red")) ? "red" : (value.includes("blue")) ? "blue" : (value.includes("orange")) ? "orange" : (value.includes("pink")) ? "pink" : null ;
 
-  if(value.includes("yellow")){
-    $("div[data-value=" + value + "]").addClass("yellow");
-  } else if (value.includes("red")) {
-    $("div[data-value=" + value + "]").addClass("red");
-  }
-  else if (value.includes("blue")) {
-    $("div[data-value=" + value + "]").addClass("blue");
-  }
-  else if (value.includes("orange")) {
-    $("div[data-value=" + value + "]").addClass("orange");
-  }
-  else if (value.includes("pink")) {
-    $("div[data-value=" + value + "]").addClass("pink");
-  }
+ $("div[data-value=" + value + "]").addClass(outputValue);
 }
 
 function unflipCard(value) {
