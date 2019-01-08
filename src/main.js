@@ -45,10 +45,12 @@ function unflipCard(value) {
 function checkMatch() {
   if (game.secondFlipValue.includes(game.firstFlipValue) || game.firstFlipValue.includes(game.secondFlipValue)) {
     game.isMatch = true;
-    $("div[data-value=" + game.firstFlipValue + "]").off("click");
-    $("div[data-value=" + game.secondFlipValue + "]").off("click");
-    game.cards.push($("div[data-value=" + game.firstFlipValue + "]"));
-    game.cards.push($("div[data-value=" + game.secondFlipValue + "]"));
+    let div1 = $("div[data-value=" + game.firstFlipValue + "]");
+    let div2 = $("div[data-value=" + game.secondFlipValue + "]");
+    div1.off("click");
+    div2.off("click");
+    game.cards.push(div1);
+    game.cards.push(div2);
   } else {
     game.isMatch = false;
     setTimeout(function(){
@@ -102,7 +104,9 @@ function playGame() {
       console.log("Moves: " + game.noOfMoves);
       if (game.cards.length === 10) {
         $(".moves").append("<li>" + game.noOfMoves + "</li>");
-        reset();
+        setTimeout(function(){
+          reset();
+        }, 1000);
       }
     }
   })
